@@ -39,10 +39,10 @@ public class Server {
         Object bean = applicationContext.getBean(clazz);
 
         Method method = bean.getClass().getMethod(methodName, parameterTypes);
-        User user = (User) method.invoke(bean, args);
+        Object object = method.invoke(bean, args);
 
         ObjectOutputStream oos = new ObjectOutputStream(out);
-        oos.writeObject(user);
+        oos.writeObject(object);
         dos.flush();
     }
 }

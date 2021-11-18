@@ -1,9 +1,14 @@
 package com.mrz.rpc.rpc07;
 
-import com.mrz.common.entity.User;
+import com.mrz.common.entity.Product;
+import com.mrz.common.service.ProductService;
+import org.springframework.stereotype.Service;
 
-public class ProductServiceImpl {
-    public User findProductById(int id) {
-        return new User(id,"测试用户");
+@Service
+public class ProductServiceImpl implements ProductService {
+
+    @Override
+    public Product findProductById(int id) {
+        return new Product(id,"测试产品");
     }
 }

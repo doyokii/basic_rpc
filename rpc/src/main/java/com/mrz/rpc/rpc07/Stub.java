@@ -1,8 +1,5 @@
 package com.mrz.rpc.rpc07;
 
-import com.mrz.common.entity.User;
-import com.mrz.common.service.UserService;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationHandler;
@@ -28,14 +25,13 @@ public class Stub {
             oos.flush();
 
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-            User user = (User) ois.readObject();
+            Object receiveObject = ois.readObject();
 
             oos.close();
             socket.close();
-            return user;
+            return receiveObject;
         };
-        //fixme 待抽象？
-        Object o = Proxy.newProxyInstance(UserService.class.getClassLoader(), new Class[]{UserService.class}, h);
+        Object o = Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, h);
         return o;
     }
 }

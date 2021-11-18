@@ -1,10 +1,11 @@
 package com.mrz.rpc.rpc07;
 
-import com.mrz.common.service.UserService;
+import com.mrz.common.entity.Product;
+import com.mrz.common.service.ProductService;
 
 public class Client {
     public static void main(String[] args) throws Exception{
-        UserService service = (UserService) Stub.getStub(UserService.class);
-        System.out.println(service.findById(123));
+        ProductService service = (ProductService) Stub.getStub(ProductService.class);
+        System.out.println((Product)service.findProductById(321));
     }
 }
