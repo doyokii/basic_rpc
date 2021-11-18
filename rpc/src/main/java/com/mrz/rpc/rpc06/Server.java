@@ -36,18 +36,11 @@ public class Server {
         Class[] parameterTypes = (Class[]) ois.readObject();
         Object[] args = (Object[]) ois.readObject();
 
-
-        UserService bean = applicationContext.getBean(UserService.class);
-        Object bean11 = applicationContext.getBeansOfType(clazzName.getClass());
-
-//        Object bean1 = applicationContext.getBean(clazzName);
         Class<?> clazz = Class.forName(clazzName);
-        //fixme 接口未注入
-//        Class clazz = (Class) applicationContext.getBean(clazzName);
-        Class clazz1= (Class) applicationContext.getBean(clazz);
+        Object bean = applicationContext.getBean(clazz);
 
-        Method method =        clazz1.getMethod(methodName, parameterTypes);
-        User user = (User) method.invoke(clazz, args);
+        Method method = bean.getClass().getMethod(methodName, parameterTypes);
+        User user = (User) method.invoke(bean, args);
 
         ObjectOutputStream oos = new ObjectOutputStream(out);
         oos.writeObject(user);
