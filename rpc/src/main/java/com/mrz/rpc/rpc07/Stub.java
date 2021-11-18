@@ -1,4 +1,4 @@
-package com.mrz.rpc.rpc06;
+package com.mrz.rpc.rpc07;
 
 import com.mrz.common.User;
 import com.mrz.common.UserService;
@@ -34,7 +34,8 @@ public class Stub {
             socket.close();
             return user;
         };
-        Object o = Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, h);
+        //fixme 待抽象？
+        Object o = Proxy.newProxyInstance(UserService.class.getClassLoader(), new Class[]{UserService.class}, h);
         return o;
     }
 }
