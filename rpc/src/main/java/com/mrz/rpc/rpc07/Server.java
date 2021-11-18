@@ -1,6 +1,6 @@
 package com.mrz.rpc.rpc07;
 
-import com.mrz.common.User;
+import com.mrz.common.entity.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

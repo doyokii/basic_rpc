@@ -1,4 +1,4 @@
-package com.mrz.common;
+package com.mrz.common.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

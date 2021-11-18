@@ -1,8 +1,7 @@
 package com.mrz.rpc.rpc06;
 
-import com.mrz.common.User;
-import com.mrz.common.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.mrz.common.entity.User;
+import com.mrz.common.service.UserService;
 import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {

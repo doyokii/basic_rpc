@@ -1,7 +1,7 @@
 package com.mrz.rpc.rpc01;
 
-import com.mrz.common.User;
-import com.mrz.common.UserService;
+import com.mrz.common.entity.User;
+import com.mrz.common.service.UserService;
 
 public class UserServiceImpl implements UserService {
     @Override

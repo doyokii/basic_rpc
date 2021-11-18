@@ -1,6 +1,6 @@
 package com.mrz.rpc.rpc06;
 
-import com.mrz.common.UserService;
+import com.mrz.common.service.UserService;
 
 public class Client {
     public static void main(String[] args) throws Exception{

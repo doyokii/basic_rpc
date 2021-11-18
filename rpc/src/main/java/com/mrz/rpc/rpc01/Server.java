@@ -1,6 +1,6 @@
 package com.mrz.rpc.rpc01;
 
-import com.mrz.common.User;
+import com.mrz.common.entity.User;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

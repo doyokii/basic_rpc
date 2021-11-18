@@ -1,13 +1,12 @@
 package com.mrz.rpc.rpc03;
 
-import com.mrz.common.User;
-import com.mrz.common.UserService;
+import com.mrz.common.entity.User;
+import com.mrz.common.service.UserService;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.net.Socket;
 

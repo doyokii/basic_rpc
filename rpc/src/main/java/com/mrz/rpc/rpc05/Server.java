@@ -1,6 +1,6 @@
 package com.mrz.rpc.rpc05;
 
-import com.mrz.common.User;
+import com.mrz.common.entity.User;
 
 import java.io.*;
 import java.lang.reflect.Method;

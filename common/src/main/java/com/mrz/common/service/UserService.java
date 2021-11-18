@@ -1,5 +1,6 @@
-package com.mrz.common;
+package com.mrz.common.service;
 
+import com.mrz.common.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service()
