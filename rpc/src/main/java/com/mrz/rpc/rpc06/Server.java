@@ -36,6 +36,7 @@ public class Server {
         Class[] parameterTypes = (Class[]) ois.readObject();
         Object[] args = (Object[]) ois.readObject();
 
+        //通过接口Class对象 并在容器中拿到接口实现的实例
         Class<?> clazz = Class.forName(clazzName);
         Object bean = applicationContext.getBean(clazz);
 
