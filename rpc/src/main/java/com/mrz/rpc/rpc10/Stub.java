@@ -1,7 +1,12 @@
 package com.mrz.rpc.rpc10;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import com.caucho.hessian.io.Hessian2Input;
+import com.caucho.hessian.io.Hessian2Output;
+
+import org.apache.commons.io.IOUtils;
+import sun.nio.ch.IOUtil;
+
+import java.io.*;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.net.Socket;
@@ -24,8 +29,9 @@ public class Stub {
             oos.writeObject(args);
             oos.flush();
 
-            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-            Object receiveObject = ois.readObject();
+
+            byte[] bytes = IOUtils.toByteArray(socket.getInputStream());
+            Object receiveObject = HessianUtil.deserialize(bytes);
 
             oos.close();
             socket.close();

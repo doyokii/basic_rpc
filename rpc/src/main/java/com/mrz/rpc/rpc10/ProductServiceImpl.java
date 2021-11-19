@@ -4,7 +4,6 @@ import com.mrz.common.entity.Product;
 import com.mrz.common.service.ProductService;
 import org.springframework.stereotype.Service;
 
-@Service
 public class ProductServiceImpl implements ProductService {
 
     @Override

@@ -42,8 +42,12 @@ public class Server {
         Method method = bean.getClass().getMethod(methodName, parameterTypes);
         Object object = method.invoke(bean, args);
 
-        ObjectOutputStream oos = new ObjectOutputStream(out);
-        oos.writeObject(object);
-        dos.flush();
+        //markedby-zhuang
+        byte[] serialize = HessianUtil.serialize(object);
+        out.write(serialize);
+
+//        ObjectOutputStream oos = new ObjectOutputStream(out);
+//        oos.writeObject(object);
+//        dos.flush();
     }
 }
