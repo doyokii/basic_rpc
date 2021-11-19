@@ -13,6 +13,7 @@ public class Server {
     private static boolean running = true;
 
     public static void main(String[] args) throws Exception{
+        //8990端口进行监听
         ServerSocket serverSocket = new ServerSocket(8990);
         while (running){
             Socket socket = serverSocket.accept();
@@ -22,6 +23,11 @@ public class Server {
         serverSocket.close();
     }
 
+    /**
+     * 对接收的客户端链接进行处理
+     * @param socket
+     * @throws Exception
+     */
     private static void process(Socket socket) throws Exception{
         InputStream in = socket.getInputStream();
         OutputStream out = socket.getOutputStream();
@@ -31,6 +37,7 @@ public class Server {
         int id = dis.readInt();
         UserServiceImpl service = new UserServiceImpl();
         User user = service.findById(id);
+        //将对象属性根据类型单独写回给客户端
         dos.writeInt(user.getId());
         dos.writeUTF(user.getName());
         dos.flush();

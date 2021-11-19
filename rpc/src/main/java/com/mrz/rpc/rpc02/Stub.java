@@ -6,7 +6,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
-
+/**
+ * @author : Zhuang Jialong
+ * @description : 代理类 封装网络层io操作 屏蔽细节
+ * @date :
+ * @Copyright:
+ */
 public class Stub {
     public User findById(int id) throws Exception{
         Socket socket = new Socket("127.0.0.1", 8990);
